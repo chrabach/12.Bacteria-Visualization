@@ -87,8 +87,8 @@ function buildMetadata(sample) {
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
 	//var firstSample.labels
   var otu_ids = firstSample.otu_ids;
-  var otu_labels = firstSample.otu_labels
-  var sample_values = firstSample.sample_values
+  var otu_labels = firstSample.otu_labels;
+  var sample_values = firstSample.sample_values;
 	//var otu_ids = samples.map(SampleObj => SampleObj.otu_ids);
 	//console.log(otu_ids)
 	
@@ -199,7 +199,7 @@ function buildMetadata(sample) {
               //Cristina (1)
               //why aren't the colors right?
               color : otu_ids,
-				      colorscale : "transparent"
+				      colorscale : "Earth"
               }
 	}
 ];
@@ -283,25 +283,26 @@ function buildMetadata(sample) {
       value : wfreq,
       title : {text:"<b>Belly Button Washing Frequency</b> <br>Scrubs per Week</br>"},
       type: "indicator",
-      mode: 'gauge+number+delta'
+      mode: 'gauge+number',
       
       
       
       //Cristina (2):
       //why doesn't gauge work:
-      //gauge: {
-        //axis: { range: [null,10] }
-  //      bar: {color: "black"}
-   //       steps: [ 
-   //           {range: [0,2], color : "red"},
-   //           {range : [2,4], color: "orange"},
-   //           {range : [4,6], color: "yellow"},
-   //           {range : [6.8], color: "light green"},
-   //           {range : [8,10], color: "green"}
-   //             ]
-          //}
+      gauge: {
+        axis: { range: [null,10], thickmode:"array",thickvals:[0,2,4,6,8,10],thicktext:[0,2,4,6,8,10]},
+        bar: {color: "black"},
+          steps: [ 
+              {range: [0,2], color : "red"},
+              {range : [2,4], color: "orange"},
+              {range : [4,6], color: "yellow"},
+              {range : [6,8], color: "lime"},
+              {range : [8,10], color: "green"}
+                ]
 
-    }];
+          }}
+
+    ];
     //console.log(gaugeData)
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
