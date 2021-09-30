@@ -13,6 +13,6 @@ https://chrabach.github.io/zz_BacteriaSite/
 
 **Contact:**
 
-**E-mail:**chrabach@gmail.com
+**E-mail:** chrabach@gmail.com
 
 **Twitter:** @chrabach
